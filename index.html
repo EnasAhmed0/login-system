@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.0/mdb.min.css"
+  rel="stylesheet"
+/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="./css/stylee.css" />
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  
+  <link rel="stylesheet" href="styleee.css/style.css">
+</head>
+<body>
+  
+
+<section class="container d-flex justify-content-around align-content-center py-5">
+
+<section class="col-sm-12 side-left w-50 z-3 text-center align-content-center ">
+<div class="hex-loading-container text-center">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="144" height="144" viewBox="0 0 144 144">
+    <defs>
+      <path id="hex" d="M80.988 52a5.393 5.393 0 014.638 2.637l.03.051L94.19 69.43a5.366 5.366 0 01.032 5.321l-.032.056-8.533 14.742a5.393 5.393 0 01-4.607 2.688H63.923a5.393 5.393 0 01-4.638-2.636l-.03-.052-8.533-14.742a5.366 5.366 0 01-.032-5.321l.032-.056 8.533-14.742A5.394 5.394 0 0163.863 52h17.125z">
+
+    </path></defs>
+    <g fill="none" fill-rule="evenodd">
+      <g transform="translate(22.13,-40)"><use xlink:href="#hex" fill="#ff753f" class="waiting-hex"></use></g>
+      <g transform="translate(-24,-13.38)"><use xlink:href="#hex" fill="#ff753f" class="waiting-hex" style="animation-delay: 400ms;"></use></g>
+      <g transform="translate(22.13,13.14)"><use xlink:href="#hex" fill="#ff753f" class="waiting-hex" style="animation-delay: 800ms;"></use></g>
+      <g transform="translate(-24,39.76)"><use xlink:href="#hex" fill="#ff753f" class="waiting-hex" style="animation-delay: 1200ms;  transform: translate(-24, 39.76);"></use></g>
+    </g></svg>
+  </div>
+
+<div class="headline">
+                <h2 style="color: aliceblue;" class="display-5">welcome to my site<br>
+                   <span id="element" class="fw-medium"></span><span class="typed-cursor">|</span></h2>
+                <p style="color: aliceblue;">We are preparing something amazing and exciting for you.<br> Special surprise </p>
+              </div>
+  
+</section>
+<!-- ************************** -->
+<section class=" col-sm-12 side-right w-50">
+  <form name="RegForm" onsubmit="return validateForm()">
+<div class="container py-5 z-1">
+<div class="card p-5 d-flex justify-content-between ">
+  <div class="left">
+    <h1 class="text-center">Login System</h1>
+  </div>
+<div class="right">
+<div class="tab-content">
+  <div
+    class="tab-pane fade show active"
+    id="pills-login"
+    role="tabpanel"
+    aria-labelledby="tab-login"
+  >
+    <div>
+  
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="email"  id="mail" class="form-control" />
+        <label class="form-label" for="mail">Email </label>
+      </div>
+
+      <!-- Password input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password"  id="pass"  class="form-control" />
+        <label class="form-label" for="Pass">Password</label>
+      </div>
+       <span id="login-message" class="text-center d-none mt-3"></span>
+      <!-- 2 column grid layout -->
+      <div class="row mb-4">
+        <div class="col-md-6 d-flex justify-content-center">
+          <!-- Checkbox -->
+          <div class="form-check mb-3 mb-md-0">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="loginCheck"
+              checked
+            />
+            <label class="form-check-label" for="loginCheck"> Remember me </label>
+          </div>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-center">
+          <!-- Simple link -->
+          <a href="#!">Forgot password?</a>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-4" id="login-btn" onclick="getSignin()">Sign in</button>
+
+      <!-- Register buttons -->
+      <div class="text-center">
+        <p>Not a member? <a href="#!">Register</a></p>
+      </div>
+
+          <div class="text-center mb-3">
+    
+        <button data-mdb-ripple-init type="button" id="login-facebook" class="btn btn-secondary facebook btn-floating mx-1">
+          <i  class="fab fa-facebook-f"></i>
+        </button>
+
+        <button data-mdb-ripple-init type="button"  id="login-google" class="btn btn-secondary google btn-floating mx-1">
+          <i class="fab fa-google"></i>
+        </button>
+
+        <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+          <i class="fab fa-twitter"></i>
+        </button>
+
+        <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+          <i class="fab fa-github"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ************************************************************************************** -->
+  <div
+    class="tab-pane fade"
+    id="pills-register"
+    role="tabpanel"
+    aria-labelledby="tab-register"
+  >
+    <div>
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="text" id="name" name="Name" class="form-control" />
+        <label class="form-label"  for="name"> Name</label>
+        <span id="name-error" class="error-message"></span>
+      </div>
+
+      <!-- Username input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="text" id="userName"class="form-control" />
+        <label class="form-label"  for="userName">Username</label>
+        <span id="name-error" class="error-message"></span>
+      </div>
+
+      <!-- Email input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="email"  id="userMali" class="form-control" />
+        <label class="form-label" for="userMali">Email</label>
+        <span id="email-error" class="error-message"></span>
+      </div>
+
+      <!-- Password input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password" id="password" class="form-control" />
+        <label class="form-label" for="password">Password</label>
+         <span id="password-error" class="error-message"></span>
+      </div>
+
+      <!-- Repeat Password input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password" class="form-control" />
+        <label class="form-label" for="userPass">Repeat password</label>
+         <span id="password-error" class="error-message"></span>
+      </div>
+
+      <!-- Checkbox -->
+      <div class="form-check d-flex justify-content-center mb-4">
+        <input
+          class="form-check-input me-2"
+          type="checkbox"
+          value=""
+          id="registerCheck"
+          checked
+          aria-describedby="registerCheckHelpText"
+        />
+        <label class="form-check-label" for="registerCheck">
+          I have read and agree to the terms
+        </label>
+      </div>
+<span id="message" class="text-center d-none mt-3"></span>
+      <!-- Submit button -->
+      <button data-mdb-ripple-init type="submit" id="signUp" class="btn btn-primary btn-block mb-3"  onclick="getSignup()">Sign up</button>
+
+            <div class="text-center mb-3">
+       
+        <button data-mdb-ripple-init type="button"  class="btn btn-secondary btn-floating mx-1">
+          <i class="fab fa-facebook-f"></i>
+        </button>
+
+        <button data-mdb-ripple-init type="button"  class="btn btn-secondary btn-floating mx-1">
+          <i class="fab fa-google"></i>
+        </button>
+
+        <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+          <i class="fab fa-twitter"></i>
+        </button>
+
+        <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+          <i class="fab fa-github"></i>
+        </button>
+            </div>
+
+    </div>
+  </div>
+</div>
+
+<ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link active"
+      id="tab-login"
+      data-mdb-pill-init
+      href="#pills-login"
+      role="tab"
+      aria-controls="pills-login"
+      aria-selected="true"
+      >Login</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="tab-register"
+      data-mdb-pill-init
+      href="#pills-register"
+      role="tab"
+      aria-controls="pills-register"
+      aria-selected="false"
+      >Register</a
+    >
+  </li>
+</ul>
+
+</div>
+</div>
+</div></form>
+</section>
+
+
+</section>
+
+
+
+
+
+<footer class="text-center  z-3">
+  <div class="container footer-icon pt-2">
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+  </div>
+  <div class="text-center pb-3 footer-text " style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright : Enas Ahmed
+    <a class="text-body" href=""></a>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <script>
+      var typed = new Typed('#element', {
+        strings: ['Login System', 'Register System'],
+        typeSpeed: 100,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+        startDelay: 0,
+        // smartBackspace: true,
+      });
+    </script>
+   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Facebook SDK -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+ <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://connect.facebook.net/en_US/sdk.js" async defer></script>
+  <!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.0/mdb.umd.min.js"
+></script>
+<script src="./js/index.js"></script>
+</body>
+</html>
